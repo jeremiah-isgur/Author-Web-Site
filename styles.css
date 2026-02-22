@@ -1,9 +1,16 @@
 /* ===========================
-   WIREFRAME STYLESHEET
-   A minimal, clean foundation.
-   Replace these styles as you
-   develop your final design.
+   JEREMIAH ISGUR
+   Dark theme / orange accent
    =========================== */
+
+:root {
+    --black: #0a0a0a;
+    --white: #e8e8e8;
+    --white-dim: #888;
+    --orange: #ff5e1a;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --display: 'Archivo Black', 'Impact', sans-serif;
+}
 
 * {
     margin: 0;
@@ -11,13 +18,24 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: var(--orange);
+    color: var(--black);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #333;
-    background: #fafafa;
+    font-family: var(--mono);
+    font-weight: 300;
+    color: var(--white);
+    background: var(--black);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* --- Navigation --- */
@@ -26,124 +44,193 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem 2rem;
-    border-bottom: 1px solid #ddd;
-    background: #fff;
+    padding: 1.5rem 2.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--black);
 }
 
 .nav-logo {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-family: var(--display);
+    font-size: 1.4rem;
     text-decoration: none;
-    color: #333;
-    letter-spacing: 0.02em;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.nav-logo:hover {
+    color: var(--orange);
+}
+
+.logo-dot {
+    color: var(--orange);
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #666;
-    font-size: 0.95rem;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
+    color: var(--white-dim);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #333;
+    color: var(--white);
 }
 
 .nav-links a.active {
-    color: #333;
-    border-bottom-color: #333;
+    color: var(--orange);
 }
 
 /* --- Page Content --- */
 
 .page-content {
     flex: 1;
-    max-width: 640px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 8rem 2.5rem 4rem;
     width: 100%;
 }
 
-.page-content h1 {
-    font-size: 2rem;
-    font-weight: normal;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.01em;
+/* --- Page Headers --- */
+
+.page-header {
+    margin-bottom: 3rem;
 }
 
-.page-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #555;
+.page-header h1 {
+    font-family: var(--display);
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--white);
+}
+
+.header-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin-top: 1.25rem;
+}
+
+/* --- Content --- */
+
+.content-block p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--white-dim);
+    max-width: 540px;
 }
 
 /* --- Home Page --- */
 
 .home-page {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    padding-top: 0;
+    min-height: 100vh;
 }
 
-.home-page h1 {
-    font-size: 2.5rem;
+.home-hero {
+    position: relative;
 }
 
-.subtitle {
-    font-style: italic;
-    color: #888 !important;
-    font-size: 1.1rem !important;
+.hero-bar {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--orange);
+}
+
+.home-hero h1 {
+    font-family: var(--display);
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 0.92;
+    color: var(--white);
+}
+
+.location {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--white-dim);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
 }
 
 /* --- Scarlet Page --- */
 
 .scarlet-page .coming-soon {
-    font-style: italic;
-    color: #999;
-    font-size: 1.2rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--orange);
 }
 
 /* --- Footer --- */
 
 .footer {
-    border-top: 1px solid #ddd;
-    padding: 1.25rem 2rem;
-    text-align: center;
-    background: #fff;
+    padding: 2rem 2.5rem;
+    text-align: right;
 }
 
 .footer p {
-    font-size: 0.85rem;
-    color: #999;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--white-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 /* --- Responsive --- */
 
 @media (max-width: 600px) {
     .nav {
-        flex-direction: column;
-        gap: 0.75rem;
+        padding: 1.25rem 1.5rem;
     }
 
     .nav-links {
-        gap: 1rem;
+        gap: 1.25rem;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
     }
 
     .page-content {
-        padding: 3rem 1.25rem;
+        padding: 7rem 1.5rem 3rem;
     }
 
-    .home-page h1 {
-        font-size: 2rem;
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-bar {
+        left: -1.5rem;
+    }
+
+    .footer {
+        text-align: center;
     }
 }
