@@ -1,0 +1,149 @@
+/* ===========================
+   WIREFRAME STYLESHEET
+   A minimal, clean foundation.
+   Replace these styles as you
+   develop your final design.
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #333;
+    background: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navigation --- */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.nav-logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+.nav-links a.active {
+    color: #333;
+    border-bottom-color: #333;
+}
+
+/* --- Page Content --- */
+
+.page-content {
+    flex: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.page-content h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.page-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* --- Home Page --- */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-page h1 {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #888 !important;
+    font-size: 1.1rem !important;
+}
+
+/* --- Scarlet Page --- */
+
+.scarlet-page .coming-soon {
+    font-style: italic;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 1.25rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .page-content {
+        padding: 3rem 1.25rem;
+    }
+
+    .home-page h1 {
+        font-size: 2rem;
+    }
+}
