@@ -136,6 +136,10 @@ body {
     max-width: 540px;
 }
 
+.content-block p + p {
+    margin-top: 1.5rem;
+}
+
 /* --- Home Page --- */
 
 .home-page {
