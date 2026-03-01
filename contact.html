@@ -28,7 +28,16 @@
         </div>
         <div class="content-block">
             <p class="page-intro">For inquiries, please use the form below.</p>
-            <form action="https://formspree.io/f/xlgwvoja" method="POST" class="contact-form">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://jeremiahisgur.com/contact.html?submitted=true">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
                     <input type="text" id="subject" name="subject" required>
@@ -39,11 +48,22 @@
                 </div>
                 <button type="submit" class="form-submit">Send</button>
             </form>
+            <div id="thank-you" class="thank-you" style="display: none;">
+                <p>Thank you for submitting your inquiry.</p>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
         <p>&copy; 2026 Jeremiah Isgur</p>
     </footer>
+
+    <script>
+        if (window.location.search.includes('submitted=true')) {
+            document.querySelector('.contact-form').style.display = 'none';
+            document.querySelector('.page-intro').style.display = 'none';
+            document.getElementById('thank-you').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

@@ -367,6 +367,13 @@ body {
     opacity: 0.85;
 }
 
+.thank-you p {
+    font-family: var(--mono);
+    font-size: 1rem;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+}
+
 /* --- Footer --- */
 
 .footer {
